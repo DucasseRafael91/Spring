@@ -32,4 +32,15 @@ public class Article implements Serializable{
     this.price = price;
     this.category = category;
   }
+
+  @Override
+  public String toString() {
+    return "Article{" +
+        "id=" + id +
+        ", brand='" + brand + '\'' +
+        ", description='" + description + '\'' +
+        ", price=" + price +
+        ", category=" + category +
+        '}';
+  }
 }
