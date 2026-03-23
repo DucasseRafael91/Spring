@@ -6,6 +6,7 @@ import com.example.demo.entities.Article;
 
 public interface ArticleRepository extends JpaRepository<Article,Long> {
   public List<Article> findByBrand(String brand);
+  public List<Article> findByDescription(String description);
   public List<Article> findByBrandContains(String brand);
   public List<Article> findByBrandAndPrice(String brand, double price);
 

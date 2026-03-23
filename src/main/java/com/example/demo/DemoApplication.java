@@ -25,8 +25,11 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(articleRepository.findById(1L));
-		for (Article article : articleRepository.findAll()) {
+		for (Article article : articleRepository.findByBrand("Samsung")) {
+			System.out.println(article);
+		}
+		System.out.println("Par description");
+		for (Article article : articleRepository.findByDescription("S9")) {
 			System.out.println(article);
 		}
 	}
