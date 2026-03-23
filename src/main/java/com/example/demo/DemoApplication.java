@@ -32,5 +32,6 @@ public class DemoApplication implements CommandLineRunner {
 		for (Article article : articleRepository.findByDescription("S9")) {
 			System.out.println(article);
 		}
+		articleRepository.deleteById(6L);
 	}
 }
