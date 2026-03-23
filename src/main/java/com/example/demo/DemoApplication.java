@@ -23,15 +23,15 @@ public class DemoApplication implements CommandLineRunner {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	public void updateById(Long id) {
+		Article article = articleRepository.findById(id).orElseThrow();
+		article.setBrand("Honor");
+		article.setDescription("Poco");
+		articleRepository.save(article);
+	}
+
 	@Override
 	public void run(String... args) throws Exception {
-		for (Article article : articleRepository.findByBrand("Samsung")) {
-			System.out.println(article);
-		}
-		System.out.println("Par description");
-		for (Article article : articleRepository.findByDescription("S9")) {
-			System.out.println(article);
-		}
-		articleRepository.deleteById(6L);
+		updateById(2L);
 	}
 }
