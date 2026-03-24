@@ -4,6 +4,7 @@ import com.example.demo.dao.ArticleRepository;
 import com.example.demo.dao.CategoryRepository;
 import com.example.demo.entities.Article;
 import com.example.demo.entities.Category;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -32,6 +33,8 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		updateById(2L);
+		System.out.println(categoryRepository.findAllByOrderByNameAsc());
+		System.out.println("Par ordre decroissant");
+		System.out.println(categoryRepository.findAllByOrderByNameDesc());
 	}
 }
